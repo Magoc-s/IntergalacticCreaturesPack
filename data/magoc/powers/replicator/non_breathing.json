@@ -1,0 +1,24 @@
+{
+    "name": "No Lungs",
+    "description": "Self-replicating machines don't need lungs. You don't breath, nor do you suffocate.",
+    "type": "origins:multiple",
+    "no_block_suffocation": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "inWall"
+        }
+    },
+    "no_drowning": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:gain_air",
+            "value": 20
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        }
+    }
+}

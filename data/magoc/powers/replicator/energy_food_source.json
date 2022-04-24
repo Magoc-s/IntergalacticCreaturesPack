@@ -1,0 +1,67 @@
+{
+    "name": "Electrical Sustenance",
+    "description": "As a self-replicating machine, your primary source of sustenance is electrical energy. You can consume redstone to extract its electrical energy, extract solar energy, or sleep to allow your internal generators to recharge your batteries. Extracting energy from redstone requires it to be in your mainhand.",
+    "type": "origins:multiple",
+    "electrical_food_source": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume"
+                    }
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.amethyst_block.place",
+                    "volume": 1.0,
+                    "pitch": 0.0
+                },
+                {
+                    "type": "origins:feed",
+                    "food": "4",
+                    "saturation": "8"
+                }
+            ]
+        },
+        "cooldown": 1,
+        "key": {
+            "key": "key.use"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:redstone"
+                        }
+                    }
+                }
+            ]
+            
+        }
+        
+    },
+    "inedible_organic_food": {
+            "type": "origins:prevent_item_use",
+            "item_condition": {
+                "type": "origins:food"
+            }
+    },
+    "cant_drink_milk": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:milk_bucket"
+            }
+        }
+    }
+}

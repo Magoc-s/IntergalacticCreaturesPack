@@ -1,0 +1,15 @@
+{
+    "powers": [
+        "magoc:replicator/magic_immunity",
+        "magoc:replicator/kinetic_mitigation",
+        "magoc:replicator/energy_food_source",
+        "magoc:replicator/nano_block_phasing",
+        "magoc:replicator/quasi_liquid_state",
+        "magoc:replicator/non_breathing",
+        "magoc:replicator/use_extra_energy"
+    ],
+    "icon": "minecraft:chain",
+    "impact": 3,
+    "name": "Pegasus Replicator",
+    "description": "A nano-cell constructed robot from the Pegasus galaxy. Control your form at will."
+}

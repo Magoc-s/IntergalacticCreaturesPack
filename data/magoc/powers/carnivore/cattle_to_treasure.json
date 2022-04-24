@@ -1,0 +1,198 @@
+{
+    "name": "Cattle to Treasure",
+    "type": "origins:self_action_on_kill",
+    "cooldown": 0,
+    "entity_action": {
+        "type": "origins:choice",
+        "actions": [
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:gold_nugget",
+                        "amount": 4
+                    }
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:gold_ingot",
+                        "amount": 1
+                    }
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:iron_ingot",
+                        "amount": 1
+                    }
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:iron_nugget",
+                        "amount": 4
+                    }
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:experience_bottle",
+                        "amount": 1
+                    }
+                },
+                "weight": 5
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:diamond",
+                        "amount": 1
+                    }
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:grass",
+                        "amount": 1
+                    }
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:stick",
+                        "amount": 1
+                    }
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "type": "origins:chance",
+                    "action": {
+                        "type": "origins:equipped_item_action",
+                        "equipment_slot": "mainhand",
+                        "action": {
+                            "type": "origins:damage",
+                            "amount": -5,
+                            "ignore_unbreaking": true
+                        }
+                    },
+                    "chance": 0.7,
+                    "fail_action" : {
+                        "type": "origins:explode",
+                        "power": 0,
+                        "damage_self": true,
+                        "destruction_type": "none",
+                        "create_fire": false
+                    }
+                },
+                "weight": 20
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:beef",
+                        "amount": 1
+                    }
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:mutton",
+                        "amount": 1
+                    }
+                },
+                "weight": 10
+            },
+            {
+                "element": {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:chicken",
+                        "amount": 1
+                    }
+                },
+                "weight": 10
+            }
+        ]
+    },
+    "target_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:cow"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:pig"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:chicken"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:sheep"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:horse"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:goat"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:llama"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:mooshroom"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:panda"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:rabbit"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:cod"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:salmon"
+            }
+        ]
+        
+    },
+    "description": "You're an experience psychopath, and Lucifer smiles upon your deeds. You get extra goodies for killing meat-providing animals."
+}

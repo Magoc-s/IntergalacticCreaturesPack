@@ -1,0 +1,1316 @@
+
+{
+    "type": "origins:multiple",
+    "name": "Kinetic Mitigation",
+    "description": "Your nano-cell make-up allows you to mitigate kinetic damage by expelling some of your nano-cells upon impact. Your self-replication capabilities allow you to regrow the dispelled nano-cells after a short time.",
+    "damage_mitigation": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+          "name": "Half kinetic damage taken",
+          "value": -0.5,
+          "operation": "multiply_base"
+        },
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "fall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                }
+            ]
+        }
+    },
+    "kinetic_damage_resource": {
+        "type": "origins:resource",
+        "start_value": 0,
+        "min": 0,
+        "max": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "nanocell_particles_on_damage": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:spawn_particles",
+            "particle": "minecraft:enchanted_hit",
+            "count": 32,
+            "speed": 1,
+            "spread": {
+                "x": 0.0,
+                "y": 0.1,
+                "z": 0.0
+            }
+        },
+        "cooldown": 1
+    },
+    "replicator_step_kinetic":
+	{
+		"type": "origins:prevent_game_event",
+		"events": [
+			"minecraft:step",
+			"minecraft:hit_ground"
+		],
+		"entity_action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:block.copper.break",
+            "volume": 0.25,
+            "pitch": 0.2
+		}
+	},
+    "modify_scale_based_on_resource": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [ 
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 1"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.95"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.9"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.85"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.8"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 5
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.75"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 6
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.7"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 7
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.65"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 8
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.6"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 9
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.55"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 10
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.5"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 11
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.45"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 12
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.4"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 13
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.35"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 14
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.3"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 15
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.25"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 16
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.2"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 17
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.15"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 18
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.1"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 19
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.05"
+                    }
+                },
+
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_kinetic_damage_resource",
+                        "comparison": "<=",
+                        "compare_to": 20
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:base 0.05"
+                            },
+                            {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:blindness",
+                                    "duration": 100,
+                                    "amplifier": 0
+                                }
+                            },
+                            {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:slowness",
+                                    "duration": 100,
+                                    "amplifier": 0
+                                }
+                            },
+                            {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:weakness",
+                                    "duration": 100,
+                                    "amplifier": 0
+                                }
+                            }
+                        ]
+                        
+                    }
+                }
+            ]
+        },
+        "interval": 20
+    },
+    "log_kinetic_damage_1": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -1
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_2": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 2
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -2
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_3": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 3
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -3
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 3
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_4": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 4
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -4
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 4
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_5": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 5
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -5
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 5
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_6": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 6
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -6
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 6
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_7": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 7
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -7
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 7
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_8": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 8
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -8
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 8
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_9": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 9
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -9
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 9
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_10": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 10
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -10
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 10
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_11": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 11
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -11
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 11
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_12": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 12
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -12
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 12
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_13": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 13
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -13
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 13
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_14": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 14
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -14
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 14
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_15": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 15
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -15
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 15
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_16": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 16
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -16
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 16
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+	"log_kinetic_damage_17": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 17
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -17
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 17
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_18": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 18
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -18
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 18
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_19": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 19
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -19
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 19
+                }
+            ]
+        },
+        "cooldown": 1
+    },
+    "log_kinetic_damage_20": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and", 
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_kinetic_damage_resource",
+                    "change": 20
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 100,
+                    "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_kinetic_damage_resource",
+                                "change": -20
+                    }
+                }
+            ]
+            
+        },
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:name",
+                            "name": "fall"
+                        },
+                        {
+                            "type": "origins:name",
+                            "name": "flyIntoWall"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 20
+                }
+            ]
+        },
+        "cooldown": 1
+    }
+
+}

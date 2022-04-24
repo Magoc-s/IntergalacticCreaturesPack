@@ -1,0 +1,35 @@
+{
+    "name": "Magic Immunity",
+    "description": "You are a machine, thus immune to magics designed to help or harm biological life forms. For example, you cannot be poisoned, but you also can't be regenerated through magical means.",
+    "type": "origins:multiple",
+    "magic_effect_immunity": {
+        "type": "origins:effect_immunity",
+        "effects": [
+            "minecraft:poison",
+            "minecraft:instant_damage",
+            "minecraft:regeneration",
+            "minecraft:hunger",
+            "minecraft:wither",
+            "minecraft:saturation",
+            "minecraft:levitation",
+            "minecraft:mining_fatigue"
+        ]
+    },
+    "impact_response": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:block.chain.place",
+            "volume": 1.0,
+            "pitch": 0.3
+        },
+        "cooldown": 1
+    },
+    "magical_immunity": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "magic.player"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "powers": [
+        "magoc:vegetarian/organic_taste",
+        "magoc:vegetarian/organic_efficiency"
+    ],
+    "icon": "minecraft:carrot",
+    "impact": 1,
+    "name": "Vegetarian",
+    "description": "As a long-time vegetarian, your love of organic food is greater than that of a typical omnivore."
+}

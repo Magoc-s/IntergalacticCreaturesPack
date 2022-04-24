@@ -1,0 +1,39 @@
+{
+    "name": "Quasi-fluid Form",
+    "description": "Your nano-cell make-up allows you to dematerialise and rematerialise your form at will, giving you the ability to phase through solid objects by exploiting sub-molecular gaps in the material. Some materials are too dense for you to phase through, though.",
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "blindness",
+    "view_distance": 10,
+    "block_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:in_tag",
+                "tag": "origins:unphaseable"
+            },
+            {
+                "type": "origins:in_tag",
+                "tag": "magoc:replicator_unphaseable"
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:power_active",
+        "power": "*:replicator/quasi_liquid_state"
+    },
+    "phase_down_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:sneaking"
+            },
+            {
+                "type": "origins:on_block"
+            },
+            {
+                "type": "origins:exposed_to_sky"
+            }
+        ]
+    }
+}

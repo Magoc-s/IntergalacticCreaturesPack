@@ -1,0 +1,6 @@
+{
+    "replace": false,
+    "origins": [
+        "magoc:origins/replicator"
+    ]
+}

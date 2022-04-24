@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "origins":
+    [
+        "magoc:classes/vegetarian",
+        "magoc:classes/carnivore"
+    ]
+}

@@ -1,0 +1,236 @@
+{
+    "name": "Organic Efficiency",
+    "type": "origins:multiple",
+    "oak_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:oak_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:oak_log"
+                    },
+                    {
+                        "item": "minecraft:stripped_oak_log"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:oak_planks",
+                "count": 6
+            }
+        }
+    },
+    "birch_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:birch_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:birch_log"
+                    },
+                    {
+                        "item": "minecraft:stripped_birch_log"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:birch_planks",
+                "count": 6
+            }
+        }
+    },
+    "spruce_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:spruce_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:spruce_log"
+                    },
+                    {
+                        "item": "minecraft:stripped_spruce_log"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:spruce_planks",
+                "count": 6
+            }
+        }
+    },
+    "jungle_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:jungle_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:jungle_log"
+                    },
+                    {
+                        "item": "minecraft:stripped_jungle_log"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:jungle_planks",
+                "count": 6
+            }
+        }
+    },
+    "acacia_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:acacia_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:acacia_log"
+                    },
+                    {
+                        "item": "minecraft:stripped_acacia_log"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:acacia_planks",
+                "count": 6
+            }
+        }
+    },
+    "dark_oak_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:dark_oak_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:dark_oak_log"
+                    },
+                    {
+                        "item": "minecraft:stripped_dark_oak_log"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:dark_oak_planks",
+                "count": 6
+            }
+        }
+    },
+    "warped_stem_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:warped_stem_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:warped_stem"
+                    },
+                    {
+                        "item": "minecraft:stripped_warped_stem"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:warped_planks",
+                "count": 6
+            }
+        }
+    },
+    "crimson_stem_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:crimson_stem_plank_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:crimson_stem"
+                    },
+                    {
+                        "item": "minecraft:stripped_crimson_stem"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:crimson_planks",
+                "count": 6
+            }
+        }
+    },
+    "pumpkin_seed_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:pumpkin_seed_efficiency",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                [
+                    {
+                        "item": "minecraft:pumpkin"
+                    }
+                ]
+            ],
+            "result": {
+                "item": "minecraft:pumpkin_seeds",
+                "count": 8
+            }
+        }
+    },
+    "sticks_efficiency": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "magoc:melon_seed_efficiency",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "S",
+                "S"
+            ],
+            "key": {
+                "S": [
+                        {
+                            "item": "minecraft:oak_planks"
+                        },
+                        {
+                            "item": "minecraft:birch_planks"
+                        },
+                        {
+                            "item": "minecraft:spruce_planks"
+                        },
+                        {
+                            "item": "minecraft:acacia_planks"
+                        },
+                        {
+                            "item": "minecraft:dark_oak_planks"
+                        },
+                        {
+                            "item": "minecraft:warped_planks"
+                        },
+                        {
+                            "item": "minecraft:crimson_planks"
+                        },
+                        {
+                            "item": "minecraft:jungle_planks"
+                        }
+                    ]
+                    
+            },
+            "result": {
+                "item": "minecraft:stick",
+                "count": 6
+            }
+        }
+    },
+    
+    "description": "You are more efficient at manipulating organic compounds."
+}

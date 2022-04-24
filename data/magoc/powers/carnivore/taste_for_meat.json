@@ -1,0 +1,88 @@
+{
+    "name": "Taste for Meat",
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:feed",
+                "food": 2.0,
+                "saturation": 1.0
+            },
+            {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "effect give @p[distance=..12] minecraft:regeneration 5 0"
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "effect give @p[distance=..12] minecraft:strength 5 0"
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "effect give @p[distance=..12] minecraft:haste 5 0"
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "effect give @p[distance=..12] minecraft:speed 5 0"
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "effect give @p[distance=..24] minecraft:speed 10 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "effect give @p[distance=..24] minecraft:strength 10 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "effect give @p[distance=..24] minecraft:haste 10 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "effect give @p[distance=..24] minecraft:jump_boost 10 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "effect give @p[distance=..24] minecraft:regeneration 10 0"
+                                }
+                            ]
+                        },
+                        "weight": 4
+                    }
+                ]
+            }
+        ]
+    },
+    "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:food"
+            },
+            {
+                "type": "origins:meat"
+            }
+        ]
+        
+    },
+    "description": "Your sumptuous and pungent meats are slightly more satisfying, and energise surrounding players upon consumption."
+}

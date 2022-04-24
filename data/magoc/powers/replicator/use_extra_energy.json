@@ -1,0 +1,11 @@
+{
+    "name": "Variable Energy Usage",
+    "description": "Use additional energy in non-standard forms due to the nano-cell re-bonding cost.",
+    "type": "origins:exhaust",
+    "interval": 20,
+    "exhaustion": 4.0,
+    "condition": {
+        "type": "origins:power_active",
+        "power": "*:replicator/quasi_liquid_state"
+    }
+}

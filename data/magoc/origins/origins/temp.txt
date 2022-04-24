@@ -1,0 +1,6 @@
+for replicator:
+    powers:
+        "magoc:replicator/modify_form",
+        
+        "magoc:replicator/mind_probe",
+        "origins:phasing"

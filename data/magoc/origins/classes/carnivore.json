@@ -1,0 +1,10 @@
+{
+    "powers": [
+        "magoc:carnivore/taste_for_meat",
+        "magoc:carnivore/cattle_to_treasure"
+    ],
+    "icon": "minecraft:cooked_beef",
+    "impact": 1,
+    "name": "Carnivore",
+    "description": "Your teeth are sharp, your tastes refined. Meat. §kM§reat. §lM§kE§rAT.§k§r"
+}
