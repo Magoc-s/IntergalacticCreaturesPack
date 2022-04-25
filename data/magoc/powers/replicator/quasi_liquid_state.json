@@ -1,6 +1,6 @@
 {
     "name": "Manipulate Quasi-State",
-    "description": "Change between quasi-states, allowing you to become solid and non-newtonian liquid at will.",
+    "description": "Change between quasi-states, allowing you to switch between a solid state and a quasi-liquid state. Maintaining molecular cohesion in a quasi-liquid state requires additional energy.",
     "type": "origins:toggle",
     "key": {
         "key": "key.origins.primary_active",

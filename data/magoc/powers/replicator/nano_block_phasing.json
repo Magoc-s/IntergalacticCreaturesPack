@@ -1,6 +1,6 @@
 {
     "name": "Quasi-fluid Form",
-    "description": "Your nano-cell make-up allows you to dematerialise and rematerialise your form at will, giving you the ability to phase through solid objects by exploiting sub-molecular gaps in the material. Some materials are too dense for you to phase through, though.",
+    "description": "Your nano-cell make-up allows you to modify your physical state, giving you the ability to phase through solid objects by exploiting sub-molecular gaps in the material when in a quasi-liquid state. Some materials are too dense for you to phase through, though.",
     "type": "origins:phasing",
     "blacklist": true,
     "render_type": "blindness",

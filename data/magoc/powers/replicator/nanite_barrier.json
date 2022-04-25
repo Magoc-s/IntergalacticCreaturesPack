@@ -1,6 +1,6 @@
 {
     "name": "Nano-cell Barrier",
-    "description": "Instead of taking damage, you are able to use excess nano-cells to absorb damage. Use your [secondary active] key to toggle barrier regeneration. Damage over 20 cannot be mitigated.",
+    "description": "Instead of taking damage, you are able to use excess nano-cells to absorb damage. Use your [secondary active] key to toggle barrier regeneration (consumes energy). Damage over 20 cannot be mitigated.",
     "type": "origins:multiple",    
     "nanites_resource": {
         "type": "origins:resource",

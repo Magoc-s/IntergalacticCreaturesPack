@@ -1,0 +1,132 @@
+{
+    "type": "origins:multiple",
+    "name": "Mind Probe",
+    "description": "Strike an entity with your fist to infect them with some nanites from your nanite barrier, causing suffering in the victim as the nanites attack their central nervous system.",
+    "strike_enemy": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:apply_effect",
+                                "effects": [
+                                    {
+                                        "effect": "minecraft:blindness",
+                                        "duration": 60,
+                                        "is_ambient": false,
+                                        "amplifier": 1,
+                                        "show_particles": true,
+                                        "show_icon": true
+                                    },
+                                    {
+                                        "effect": "minecraft:weakness",
+                                        "duration": 80,
+                                        "is_ambient": false,
+                                        "amplifier": 0,
+                                        "show_particles": true,
+                                        "show_icon": true
+                                    },
+                                    {
+                                        "effect": "minecraft:slowness",
+                                        "duration": 60,
+                                        "is_ambient": false,
+                                        "amplifier": 0,
+                                        "show_particles": true,
+                                        "show_icon": true
+                                    },
+                                    {
+                                        "effect": "minecraft:glowing",
+                                        "duration": 160,
+                                        "is_ambient": false,
+                                        "amplifier": 0,
+                                        "show_particles": false,
+                                        "show_icon": false
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.wither.spawn",
+                                "pitch": 0,
+                                "volume": 0.60
+                            },
+                            {
+                                "type": "origins:delay",
+                                "ticks": 90,
+                                "action": {
+                                    "type": "origins:play_sound",
+                                    "sound": "minecraft:entity.zombie_villager.converted",
+                                    "pitch": 0,
+                                    "volume": 0.75
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:replicator/nanite_barrier_nanites_resource",
+                                "change": -10
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.zombie.infect",
+                                "pitch": 0,
+                                "volume": 0.90
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:replicator/nanite_barrier_nanites_resource",
+                        "comparison": ">=",
+                        "compare_to": 10
+                    }
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "inverted": true,
+                    "condition": {
+                        "type": "origins:origin",
+                        "origin": "magoc:replicator",
+                        "layer": "origins:origin"
+                    }
+                }
+            ]
+        },
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": true, 
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 1
+        }
+    }
+}   

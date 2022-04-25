@@ -8,7 +8,8 @@
         "magoc:replicator/non_breathing",
         "magoc:replicator/use_extra_energy",
         "magoc:replicator/energy_resource",
-        "magoc:replicator/nanite_barrier"
+        "magoc:replicator/nanite_barrier",
+        "magoc:replicator/mind_probe"
     ],
     "icon": "minecraft:chain",
     "impact": 3,
