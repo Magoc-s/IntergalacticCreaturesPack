@@ -3,8 +3,8 @@
     "type": "origins:action_on_item_use",
     "entity_action": {
         "type": "origins:feed",
-        "food": 2.0,
-        "saturation": 3.0
+        "food": 2,
+        "saturation": 3
     },
     "item_condition": {
         "type": "origins:and",
