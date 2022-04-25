@@ -9,7 +9,8 @@
         "magoc:replicator/use_extra_energy",
         "magoc:replicator/energy_resource",
         "magoc:replicator/nanite_barrier",
-        "magoc:replicator/mind_probe"
+        "magoc:replicator/mind_probe",
+        "magoc:credits"
     ],
     "icon": "minecraft:chain",
     "impact": 3,

@@ -6,7 +6,7 @@
     "render_type": "blindness",
     "view_distance": 10,
     "block_condition": {
-        "type": "origins:and",
+        "type": "origins:or",
         "conditions": [
             {
                 "type": "origins:in_tag",
