@@ -6,8 +6,8 @@
         "actions": [
             {
                 "type": "origins:feed",
-                "food": 2.0,
-                "saturation": 1.0
+                "food": 2,
+                "saturation": 1
             },
             {
                 "type": "origins:choice",

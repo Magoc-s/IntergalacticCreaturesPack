@@ -21,13 +21,13 @@
                     "pitch": 0.0
                 },
                 {
-                    "type": "origins:feed",
-                    "food": "4",
-                    "saturation": "8"
+                    "type": "origins:change_resource",
+                    "resource": "*:replicator/energy_resource",
+                    "change": 25
                 }
             ]
         },
-        "cooldown": 1,
+        "cooldown": 10,
         "key": {
             "key": "key.use"
         },
@@ -43,11 +43,63 @@
                             "item": "minecraft:redstone"
                         }
                     }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:replicator/energy_resource",
+                    "comparison": "<",
+                    "compare_to": 95
                 }
             ]
             
         }
         
+    },
+    "keep_fed": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 20,
+            "saturation": 20
+        }
+    },
+    "disable_normal_healing": {
+        "type": "origins:disable_regen"
+    },
+    "use_energy_to_heal": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:heal",
+                    "amount": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:replicator/energy_resource",
+                    "change": -4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:replicator/energy_resource",
+                    "comparison": ">=",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<",
+                    "compare_to": 1
+                }
+            ]
+        }
     },
     "inedible_organic_food": {
             "type": "origins:prevent_item_use",
@@ -62,6 +114,26 @@
             "ingredient": {
                 "item": "minecraft:milk_bucket"
             }
+        }
+    },
+    "solar_recharge": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:replicator/energy_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:exposed_to_sun"
+        }
+    },
+    "sleep_recharge": {
+        "type": "origins:action_on_wake_up",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:replicator/energy_resource",
+            "change": 100
         }
     }
 }

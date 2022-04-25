@@ -6,10 +6,12 @@
         "magoc:replicator/nano_block_phasing",
         "magoc:replicator/quasi_liquid_state",
         "magoc:replicator/non_breathing",
-        "magoc:replicator/use_extra_energy"
+        "magoc:replicator/use_extra_energy",
+        "magoc:replicator/energy_resource",
+        "magoc:replicator/nanite_barrier"
     ],
     "icon": "minecraft:chain",
     "impact": 3,
-    "name": "Pegasus Replicator",
-    "description": "A nano-cell constructed robot from the Pegasus galaxy. Control your form at will."
+    "name": "P-Replicator",
+    "description": "A nano-cell constructed robot from the Pegasus galaxy. Pegasus Replicators differ from milky-way replicators in the way that they still take on human form. They can manipulate the bonds between their nano-cells to phase through materials and mitigate most damage, given they have the energy for it."
 }

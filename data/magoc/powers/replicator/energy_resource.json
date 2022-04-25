@@ -1,0 +1,14 @@
+{
+    "type": "origins:resource",
+    "name": "Zero-point Energy",
+    "description": "Zero-point (electrical) energy stored.",
+    "min": 0,
+    "max": 100,
+    "start_value": 100,
+    "hidden": true,
+    "hud_render": {
+        "should_render": true, 
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "bar_index": 2
+    }
+}

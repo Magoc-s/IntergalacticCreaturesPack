@@ -1,6 +1,6 @@
 {
     "name": "No Lungs",
-    "description": "Self-replicating machines don't need lungs. You don't breath, nor do you suffocate.",
+    "description": "Self-replicating machines don't need lungs. You don't breath, nor do you suffocate. Additionally, your nano-cells are a lot denser than water, making swimming impossible.",
     "type": "origins:multiple",
     "no_block_suffocation": {
         "type": "origins:invulnerability",
@@ -20,5 +20,28 @@
             "type": "origins:submerged_in",
             "fluid": "minecraft:water"
         }
+    },
+    "ignores_water": {
+        "type": "origins:ignore_water"
+    },
+    "slower_falling_in_water": {
+        "type": "origins:modify_falling",
+		"velocity": 0.05,
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water"
+		}
+    },
+    "prevent_fall_damage_in_water": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "fall"
+        },
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        }
     }
+
 }
